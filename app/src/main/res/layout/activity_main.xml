@@ -4,39 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
+    android:background="@drawable/background"
     tools:context="com.example.akarinzahotmailcom.projectandroid.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
+        android:background="#9FF"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <ImageButton
             android:id="@+id/additem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
+            tools:layout_editor_absoluteX="326dp" />
 
         <ImageButton
             android:id="@+id/signoutBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_power_settings_new_black_24dp" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_power_settings_new_black_24dp"
+            tools:layout_editor_absoluteX="326dp"
+            tools:layout_editor_absoluteY="44dp" />
 
         <ImageButton
             android:id="@+id/profileBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_perm_contact_calendar_black_24dp" />
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_perm_contact_calendar_black_24dp"
+            tools:layout_editor_absoluteX="326dp"
+            tools:layout_editor_absoluteY="44dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:fontFamily="casual"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp"
+            android:text="Newsfeed" />
 
     </android.support.design.widget.AppBarLayout>
 

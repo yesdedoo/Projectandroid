@@ -10,42 +10,56 @@
     tools:context="com.example.akarinzahotmailcom.projectandroid.ProfileActivity">
 
 
-    <ImageButton
-        android:id="@+id/imagebutton"
-        android:layout_width="233dp"
-        android:layout_height="228dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/userprofilepic"
-        android:scaleType="centerCrop" />
-
-    <EditText
-
-        android:id="@+id/profUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="?attr/actionModeBackground"
-        android:hint="Enter Display name"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:fontFamily="casual"
-        android:padding="10dp" />
-
-    <Button
-        android:id="@+id/doneBtn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginTop="50dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="Finish"
-        android:fontFamily="casual"
-        android:textStyle="bold"
-        android:textColor="#fff" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="#99FF"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imagebutton"
+            android:layout_width="175dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/userprofilepic"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerCrop" />
+
+        <EditText
+
+            android:id="@+id/profUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="?attr/actionModeBackground"
+            android:fontFamily="casual"
+            android:hint="Enter Display name"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/doneBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginRight="140dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/holo_orange_light"
+            android:fontFamily="casual"
+            android:padding="10dp"
+            android:text="Finish"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </LinearLayout>
