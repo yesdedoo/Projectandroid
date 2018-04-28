@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "503091101415",
+    "firebase_url": "https://blog-aaf04.firebaseio.com",
+    "project_id": "blog-aaf04",
+    "storage_bucket": "blog-aaf04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503091101415:android:9ac9a2c1add88093",
+        "android_client_info": {
+          "package_name": "com.example.akarinzahotmailcom.projectandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503091101415-d4bj5ru28svb4hlds88tjipg1g33639o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPe1YFIgOkD3VmFobe7DPTzwDH4FJLo2o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
