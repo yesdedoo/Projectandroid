@@ -6,60 +6,54 @@
     android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.example.akarinzahotmailcom.projectandroid.ProfileActivity">
 
 
-    <LinearLayout
+    <ImageButton
+        android:id="@+id/imagebutton"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/userprofilepic"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/Username"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="10dp"
-        android:background="#99FF"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:text="userName"
+        android:fontFamily="casual"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imagebutton"
-            android:layout_width="175dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/userprofilepic"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:scaleType="centerCrop" />
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:fontFamily="casual"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:text="Finish"
+        android:textColor="#fff"
+        android:textStyle="bold"  />
 
-        <EditText
-
-            android:id="@+id/profUserName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"
-            android:background="?attr/actionModeBackground"
-            android:fontFamily="casual"
-            android:hint="Enter Display name"
-            android:padding="10dp"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/doneBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
-            android:layout_marginTop="50dp"
-            android:background="@android:color/holo_orange_light"
-            android:fontFamily="casual"
-            android:padding="10dp"
-            android:text="Finish"
-            android:textColor="#fff"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:text="Home" />
 
 </LinearLayout>

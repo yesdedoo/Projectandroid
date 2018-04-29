@@ -1,50 +1,53 @@
 package com.example.akarinzahotmailcom.projectandroid;
 
+
+//Getter Setter class
+//Class for reviewer to take an action from doing the method
 public class Reviewer {
-    private String title;
-    private String description;
-    private String imageUrl;
-    private String username;
+    private String Title;
+    private String Description;
+    private String ImageUrl;
+    private String Username;
 
     public Reviewer(String title, String description, String imageUrl, String username){
-        this.title =title;
-        this.description = description;
-        this.imageUrl= imageUrl;
-        this.username = username;
+        this.Title =title;
+        this.Description = description;
+        this.ImageUrl= imageUrl;
+        this.Username = username;
     }
     public Reviewer(){
 
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.Title = title;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+        this.ImageUrl = imageUrl;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.Username = username;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        return ImageUrl;
     }
 
     public String getUsername() {
-        return username;
+        return Username;
     }
 }

@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
+    //innitialize state
     private RecyclerView recyclerView;
     private DatabaseReference database;
     private FirebaseAuth auth;
@@ -28,20 +29,32 @@ public class MainActivity extends AppCompatActivity {
     private ImageView profileButton;
 
     @Override
+    /*Set the initial variable or action of the activity.
+Also intent to other activity addition with
+authentication of the user in database */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initialize recyclerview and FIrebase objects
         recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+
+        //get reference of data from database name "Reviewer"
         database = FirebaseDatabase.getInstance().getReference().child("Reviewer");
+
+        //get authentication instance from firebase.
         auth = FirebaseAuth.getInstance();
         addItem = (ImageButton)findViewById(R.id.additem);
         signoutButton = (ImageButton)findViewById(R.id.signoutBtn);
         profileButton = (ImageButton)findViewById(R.id.profileBtn);
+
+        //Listener call when there when their is a change in Authentication state.
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
+
+            //This method gets invoked in the UI thread on changes in the authentication state
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(auth.getCurrentUser()==null){
                     Intent loginIntent = new Intent(MainActivity.this, RegisterActivity.class);
@@ -50,13 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
+        //add post activity
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PostActivity.class));
             }
         });
+        //sign out activity
         signoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(logoutIntent);
             }
         });
+        //Go to profile page
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,9 +89,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    /*Call for the Post's object from the database
+and set the View of the layout and intent*/
     protected void onStart(){
         super.onStart();
+        //show all feed when it change user.
         auth.addAuthStateListener(authStateListener);
+        //set recycler
         FirebaseRecyclerAdapter<Reviewer,ReviewerViewHolder> FBRA = new FirebaseRecyclerAdapter<Reviewer, ReviewerViewHolder>(Reviewer.class,R.layout.card_items,ReviewerViewHolder.class,database) {
             @Override
             protected void populateViewHolder(ReviewerViewHolder viewHolder, Reviewer model, int position) {
@@ -95,8 +114,11 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         };
+        //Adapter for a recycler view.
         recyclerView.setAdapter(FBRA);
     }
+    //Set view holder at each post.
+    //Set the View in the layout
     public static class ReviewerViewHolder extends RecyclerView.ViewHolder{
         View view;
         public ReviewerViewHolder(View itemView){

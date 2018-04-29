@@ -17,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class SinglePostActivity extends AppCompatActivity{
+
+    //initialize State
     private ImageView singleImage;
     private TextView singleTitle;
     private TextView singleDescription;
@@ -24,7 +26,9 @@ public class SinglePostActivity extends AppCompatActivity{
     private DatabaseReference database;
     private Button deleteButton;
     private FirebaseAuth auth;
-
+    /*Set the initial variable or action of the activity.
+    Also intent to other activity addition with
+    authentication of the user in database */
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_single_post);
@@ -32,25 +36,31 @@ public class SinglePostActivity extends AppCompatActivity{
         singleImage = (ImageView)findViewById(R.id.singleImageview);
         singleTitle = (TextView)findViewById(R.id.singleTitle);
         singleDescription = (TextView)findViewById(R.id.singleDesc);
+        //get reference of data from database name "Reviewer"
         database = FirebaseDatabase.getInstance().getReference().child("Reviewer");
         post_key = getIntent().getExtras().getString("PostID");
         deleteButton = (Button)findViewById(R.id.deleteBtn);
+        //Get instance from Firebase Authentication
         auth = FirebaseAuth.getInstance();
         deleteButton.setVisibility(View.INVISIBLE);
+
+        //Delete activity
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Remove post
                 database.child(post_key).removeValue();
                 Intent mainintent = new Intent(SinglePostActivity.this, MainActivity.class);
                 startActivity(mainintent);
             }
         });
 
+
         database.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String post_title = (String)dataSnapshot.child("title").getValue();
-                String post_description = (String)dataSnapshot.child("description").getValue();
+                String post_description = (String)dataSnapshot.child("decription").getValue();
                 String post_image = (String)dataSnapshot.child("imageUrl").getValue();
                 String post_uid = (String )dataSnapshot.child("uid").getValue();
 

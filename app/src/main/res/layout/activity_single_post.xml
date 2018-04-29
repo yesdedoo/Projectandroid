@@ -1,60 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="#99FF"
+    android:layout_margin="10dp"
+    tools:context="com.example.akarinzahotmailcom.projectandroid.SinglePostActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#99FF"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        tools:context="com.example.akarinzahotmailcom.projectandroid.SinglePostActivity">
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/singleImageview"
+        android:background="#FFF"/>
 
-        <ImageView
-            android:id="@+id/singleImageview"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#FFF"
-            android:scaleType="centerCrop" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/singleTitle"
+        android:textSize="20sp"
+        android:text="Post Title"
+        android:textColor="#100d0d"
+        android:fontFamily="casual"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/singleTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Post Title"
-            android:textColor="#100d0d"
-            android:fontFamily="casual"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/singleDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Post Description"
+        android:fontFamily="casual"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark" />
 
-        <TextView
-            android:id="@+id/singleDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Post Description"
-            android:fontFamily="casual"
-            android:textAllCaps="true"
-            android:textColor="@android:color/background_dark" />
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="30dp"
+        android:text="delete post"
+        android:background="@android:color/holo_orange_light"
+        android:fontFamily="casual"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
 
-        <Button
-            android:id="@+id/deleteBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
-            android:layout_marginTop="30dp"
-            android:background="@android:color/holo_orange_light"
-            android:fontFamily="casual"
-            android:text="delete post"
-            android:textColor="#fff"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
+    </ScrollView>

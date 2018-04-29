@@ -52,19 +52,17 @@
             android:hint="Post Description"
             android:padding="10dp"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:fontFamily="casual"/>
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/postBtn"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="135dp"
-            android:layout_marginRight="135dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@android:color/holo_orange_light"
-            android:fontFamily="casual"
             android:text="Post"
             android:textColor="#fff"
             android:textStyle="bold" />

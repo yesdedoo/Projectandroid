@@ -37,8 +37,8 @@
             android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:fontFamily="casual"/>
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/login_password"
@@ -49,15 +49,17 @@
             android:inputType="textPassword"
             android:padding="16dp"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:fontFamily="casual"/>
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/loginBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginRight="140dp"
             android:background="@android:color/holo_orange_light"
             android:text="Login"
             android:textColor="#fff"
@@ -68,12 +70,23 @@
             android:id="@+id/SignupBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
             android:background="@android:color/transparent"
             android:gravity="center"
             android:text="No account? Sign up."
-            android:textStyle="bold"
-            android:fontFamily="casual"/>
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/ResetBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="Forgot Pasword."
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

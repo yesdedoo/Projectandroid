@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.akarinzahotmailcom.projectandroid.RegisterActivity"
     android:background="@drawable/background"
-    >
+    android:orientation="vertical"
+    tools:context="com.example.akarinzahotmailcom.projectandroid.RegisterActivity">
 
 
     <LinearLayout
@@ -35,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Username"
+            android:hint="username"
             android:padding="16dp"
             android:textColor="#000"
             android:fontFamily="casual"
@@ -46,24 +45,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Email"
-            android:fontFamily="casual"
+            android:hint="email"
             android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="#000"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="casual"/>
 
         <EditText
             android:id="@+id/passwordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Password"
+            android:hint="password"
             android:inputType="textPassword"
-            android:fontFamily="casual"
             android:padding="16dp"
             android:textColor="#000"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="casual"/>
 
         <Button
             android:id="@+id/registerBtn"
@@ -74,8 +73,7 @@
             android:background="#FFAC00"
             android:text="Register"
             android:textColor="#fff"
-            android:fontFamily="casual"
-            />
+            android:fontFamily="casual."/>
 
         <TextView
             android:id="@+id/loginTxtView"
@@ -83,11 +81,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="16dp"
-            android:fontFamily="casual"
-            android:text="Already registered ? Login"
+            android:text="already registered ? Login"
             android:textColor="@android:color/background_dark"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="casual"/>
 
     </LinearLayout>
 

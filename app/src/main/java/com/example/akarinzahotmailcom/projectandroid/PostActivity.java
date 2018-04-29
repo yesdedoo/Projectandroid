@@ -27,6 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 public class PostActivity extends AppCompatActivity {
+    //initialize state
     private ImageButton imageButton;
     private static final int GALLERRY_REQUEST_CODE = 2;
     private Uri uri = null;
@@ -40,6 +41,9 @@ public class PostActivity extends AppCompatActivity {
     private DatabaseReference databaseUsers;
     private FirebaseUser currentUser;
 
+    /*Set the initial variable or action of the activity.
+Also intent to other activity addition with
+authentication of the user in database */
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
@@ -48,12 +52,22 @@ public class PostActivity extends AppCompatActivity {
         description = (EditText)findViewById(R.id.textDesc);
         textTitle = (EditText)findViewById(R.id.textTitle);
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        //get reference of data from database name "Reviewer"
         databaseReference = database.getInstance().getReference().child("Reviewer");
+
+        //get authentication instance from firebase.
         auth = FirebaseAuth.getInstance();
+
+        //get data of current user.
         currentUser = auth.getCurrentUser();
+
+        //Get User id from data Reference in database  table name "Users" in Firebase.
         databaseUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUser.getUid());
         imageButton = (ImageButton)findViewById(R.id.imageBtn);
 
+        //Intent to the gallery to access to the photo
+        //upload image from gallery.
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +76,8 @@ public class PostActivity extends AppCompatActivity {
                 startActivityForResult(galleryIntent, GALLERRY_REQUEST_CODE);
             }
         });
+
+        //Post Activity
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,15 +85,21 @@ public class PostActivity extends AppCompatActivity {
                 final String PostTiTle = textTitle.getText().toString().trim();
                 final String PostDescription = description.getText().toString().trim();
 
+                //Check if title and Description is not Empty.
                 if(!TextUtils.isEmpty(PostDescription) && !TextUtils.isEmpty(PostTiTle)){
+
+                    //save image in Firebase Storage folder name "post_image"
                     StorageReference filepath = storageReference.child("post_image").child(uri.getLastPathSegment());
                     filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
                         @Override
+                        //Upload the picture to Firebase storage.
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             final Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             Toast.makeText(getApplicationContext(), "Successfully Uploaded", Toast.LENGTH_SHORT).show();
                             final DatabaseReference newPost = databaseReference.push();
 
+                            // add data to the database of current user.
                             databaseUsers.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -87,6 +109,7 @@ public class PostActivity extends AppCompatActivity {
                                     newPost.child("uid").setValue(currentUser.getUid());
                                     newPost.child("username").setValue(dataSnapshot.child("name").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
+                                        //When post is complete then go to Main page.
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 Intent intent = new Intent(PostActivity.this, MainActivity.class);
@@ -107,6 +130,7 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
+    //Image from galley result
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
 
